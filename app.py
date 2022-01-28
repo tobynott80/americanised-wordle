@@ -22,6 +22,9 @@ def americaCheck(word):
             return True
     return False
                     
+def init():
+    date = getDate()
+    word = getWord(date)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -31,7 +34,6 @@ def index():
 
 
 if __name__ == "__main__":
-    date = getDate()
-    word = getWord(date)
+    
     app.run(debug=True)
     
