@@ -26,6 +26,13 @@ def getWord(date):
             if row['date'] == date:
                 return row['word']
 
+def getWordle(date):
+    with open('wordlist.csv', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            if row['date'] == date:
+                return row['wordle']
+            
 def americaCheck(word):
     for i in usa:
         if word == i:
@@ -39,6 +46,7 @@ def index():
     if request.method == 'GET':
         date = getDate()
         word = getWord(date)
+        wordle = getWordle(date)
         if americaCheck(word):
             return render_template("true.html")
         else:
@@ -50,6 +58,7 @@ if __name__ == "__main__":
     date = getDate()
     word = getWord(date)
     print(americaCheck(word))
+    print(getWordle(date))
     app.run(debug=True)
     
 
