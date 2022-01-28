@@ -1,9 +1,19 @@
-from flask import Flask, redirect, request, render_template, make_response, url_for, jsonify
+from flask import Flask, redirect, request, render_template, make_response, url_for
 from datetime import date, datetime
 import csv
 from datetime import datetime
+from flask_caching import Cache
+
+config = {
+    "DEBUG": True,          # some Flask specific configs
+    "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
+    "CACHE_DEFAULT_TIMEOUT": 300
+}
 
 app = Flask(__name__)
+app.config.from_mapping(config)
+cache = Cache(app)
+
 usa = ["aging","arbor","ardor","armor","balks","check","chili","color","disks","draft","edema","fecal","feces","favor","fiber","filet","fetal","fetid","fetus","jails","gaged","gages","grams","grays","groin","honor","humor","labor","liter","meter","miter","molds","moldy","molts","odors","phony","plows","poufs","rigor","rumor","saber","savor","sheik","story","tumor","tires","valor","vapor","vigor","wagon","wooly"]
 
 def getDate():
@@ -22,18 +32,21 @@ def americaCheck(word):
             return True
     return False
                     
-def init():
-    date = getDate()
-    word = getWord(date)
 
 @app.route('/', methods=['GET'])
+@cache.cached(timeout=50)
 def index():
     if request.method == 'GET':
+        
         return 6
     
 
 
 if __name__ == "__main__":
-    
+    date = getDate()
+    word = getWord(date)
+    print(americaCheck(word))
     app.run(debug=True)
+    
+
     
