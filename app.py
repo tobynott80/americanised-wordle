@@ -9,6 +9,20 @@ usa = ["aging","arbor","ardor","armor","balks","check","chili","color","disks","
 def getDate():
     return datetime.today().strftime('%d/%m/%Y')
 
+def getWord(date):
+    with open('wordlist.csv', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            if row['date'] == date:
+                return row['word']
+
+def americaCheck(word):
+    for i in usa:
+        if word == i:
+            return True
+    return False
+                    
+
 @app.route('/', methods=['GET'])
 def index():
     if request.method == 'GET':
@@ -18,5 +32,6 @@ def index():
 
 if __name__ == "__main__":
     date = getDate()
-    
+    word = getWord(date)
     app.run(debug=True)
+    
