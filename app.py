@@ -37,8 +37,12 @@ def americaCheck(word):
 @cache.cached(timeout=50)
 def index():
     if request.method == 'GET':
-        
-        return 6
+        date = getDate()
+        word = getWord(date)
+        if americaCheck(word):
+            return render_template
+        else:
+            return render_template
     
 
 
