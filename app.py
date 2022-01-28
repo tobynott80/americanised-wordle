@@ -40,9 +40,9 @@ def index():
         date = getDate()
         word = getWord(date)
         if americaCheck(word):
-            return render_template
+            return render_template("true.html")
         else:
-            return render_template
+            return render_template("false.html")
     
 
 
