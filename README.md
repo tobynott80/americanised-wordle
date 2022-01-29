@@ -1,2 +1,5 @@
-# americanised-wordle
-Website to determine whether todays wordle is an americanised spelling
+# Wordle Spell Checker
+
+http://wordle.tobynott.com/
+
+Simple website to determine whether today's wordle is an uses a British American an American spelling 
