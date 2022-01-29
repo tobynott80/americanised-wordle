@@ -1,3 +1,5 @@
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=wordle-determiner&style=<STYLE>)
+
 # Wordle Spell Checker
 
 http://wordle.tobynott.com/
