@@ -48,9 +48,9 @@ def index():
         word = getWord(date)
         wordle = getWordle(date)
         if americaCheck(word):
-            return render_template("true.html")
+            return render_template("true.html", wordle=wordle, date=date)
         else:
-            return render_template("false.html")
+            return render_template("false.html", wordle=wordle, date=date)
     
 
 
