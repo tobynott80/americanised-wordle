@@ -41,7 +41,7 @@ def americaCheck(word):
                     
 
 @app.route('/', methods=['GET'])
-@cache.cached(timeout=50)
+#@cache.cached(timeout=50)
 def index():
     if request.method == 'GET':
         date = getDate()
