@@ -5,7 +5,7 @@ from datetime import datetime
 from flask_caching import Cache
 
 config = {
-    "DEBUG": True,          # some Flask specific configs
+    "DEBUG": False,          # some Flask specific configs
     "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
     "CACHE_DEFAULT_TIMEOUT": 300
 }
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     word = getWord(date)
     print(americaCheck(word))
     print(getWordle(date))
-    app.run(debug=True)
+    app.run(debug=False)
     
 
     
