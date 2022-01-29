@@ -8,9 +8,26 @@
     <title>Wordle for Brits</title>
 </head>
 <body>
-    <div class="class="px-4 py-5 my-5 text-center"">
-        <h1 class="display-5 fw-bold">American Spelling</h1>
+    <div class="container" style="text-align: center;padding-top: 12px;">
+        <div class="row">
+            <div class="col" style="text-align: center;"><strong
+                    style="font-size: 30px;text-align: center;">American Spelling</strong></div>
+        </div>
+        <div class="row">
+            <div class="col" style="margin: 10px;"><img src="/static/img/us.png" style="height: 159px;"></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Watch out! Today's Wordle is an American Spelling (i.e favour --> favor).</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p style="margin-bottom: 0px;">Wordle {{wordle}}</p>
+                <p>{{date}}</p>
+            </div>
+        </div>
     </div>
-    
+    <footer class="text-center"><a class="text-center" href="https://tobynott.com">Toby Nott - 2022</a></footer>
 </body>
 </html>
