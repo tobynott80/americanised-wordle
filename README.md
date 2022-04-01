@@ -2,7 +2,7 @@
 
 # Wordle Spell Checker
 
-http://wordle.tobynott.com/
+~~http://wordle.tobynott.com/~~ (deprecated since nyt changed wordlist)
 
 Simple website to determine whether today's wordle is an uses a British American an American spelling. 
 
