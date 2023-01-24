@@ -1,5 +1,5 @@
 
-# ~~Wordle Spell Checker~~
+# ~~Wordle Spell Checker~~ Archive
 
 ~~http://wordle.tobynott.com/~~ (deprecated since nyt changed wordlist)
 
